@@ -48,20 +48,7 @@ const MakeCard = (props) => {
         {props.data.card_tags.map((item) => <Tag data={item} />)}
       </div>
     </div>
-    <div className="footer1">
-      <hr className="solid-divider" />
-      <div className="container-b">
-        <div className="container-c">
-          <div className="users-list">
-            {props.data.registered_users.top_users.map((item) => <Avatar imgurl={item.image_url} name={item.name} />)}
-          </div>
-          {!props.isArchived && <button className="btn">Register Now</button>}
-        </div>
-        <div>
-          {others > 0 && ("and " + others + " others registered")}
-        </div>
-      </div>
-    </div>
+    <div className="sized-box-100"></div>
     <div className="footer">
       <hr className="solid-divider" />
       <div className="container-b">
