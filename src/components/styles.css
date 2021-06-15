@@ -1,0 +1,94 @@
+.main-box {
+  width : 80%;
+  margin:auto;
+  border-radius: 0.2% ;
+  border : 1px solid #d0d0d0;
+}
+.tab-container {
+  width: 100%;
+}
+.tab-outer {
+  height: 4rem;
+  width: 100%;
+  overflow-x: auto;
+}
+.tab-inner-container {
+  background-color: #eee;
+  width: 100%;
+}
+.tab-inner {
+  
+  width: 50%;
+  height: 3rem;
+}
+
+.content{
+  display:flex;  
+  width:100%;
+  
+  justify-content: space-between;
+  
+  padding: 1rem;
+}
+
+.Card{
+  width: 45%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 2%;
+}
+
+.imgContainer{
+  border-radius: 2%;
+}
+
+.img{
+  width: 100%;
+  border-radius: 2%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  object-fit: contain;
+}
+
+.table {
+  width: 100%;
+}
+
+.TagC {
+  margin-right: 10px ;
+}
+
+.table td {
+  text-align: center;
+}
+
+.container-b {
+  padding : 15px;
+}
+
+.TagContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.Tag {
+  background-color: #eee;
+  color: #616161;
+  border-radius: 2%;
+  padding:8px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainbar {
+  width:80%;
+}
+
+.users-list {
+  display: flex;
+}

@@ -1,0 +1,25 @@
+.avatar {
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center
+}
+
+.avatar-container {
+  width: 25%;
+  height: 55%;
+}
+
+.avatar:hover .img-description {
+  visibility: hidden;
+
+}
+
+.img-description {
+  bottom: 0;
+  display: inline-block;
+  /* visibility: hidden; */
+}
+

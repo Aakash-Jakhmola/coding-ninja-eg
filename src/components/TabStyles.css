@@ -1,0 +1,40 @@
+
+
+
+
+.opt-out {
+  width: 20%;
+  padding-right: 1rem;
+  min-width: fit-content;
+  display: inline-block;
+  font-size: 20px;
+  color: rgb(187, 187, 187);
+  cursor: pointer;
+  text-align: center;
+}
+
+.opt-out div {
+ margin-top: 1rem;
+}
+.opt-out i {
+  margin-right: 0.5rem;
+}
+
+.opt-out-active {
+  border-bottom: 2px solid rgb(255, 115, 0) ;
+  color: rgb(255, 115, 0);
+  font-weight: 600;
+}
+.opt-out :hover {
+  color: grey;
+}
+.opt-out-active :hover {
+  color: rgb(255, 115, 0);
+}
+
+.tab-wrapper {
+  width : 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
