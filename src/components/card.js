@@ -15,10 +15,12 @@ const MakeCard = (props) => {
   d = new Date(0) ;
   d.setUTCSeconds(props.data.registration_end_time)
   let reg_end_date = date.format(d, 'hh:mm A, DD MMM YYYY');
+
+
+
   return <div className="Card">
-    
     <div className="imgContainer">
-      <img className="img" src={props.data.cover_picture} />
+      <img className="img" src={props.data.mobile_cover_picture} />
       {!props.isArchived && <div className="img-text"><p>Registrations open till {reg_end_date}</p></div>}
     </div>
     <div className="container-b">
@@ -46,6 +48,20 @@ const MakeCard = (props) => {
         {props.data.card_tags.map((item) => <Tag data={item} />)}
       </div>
     </div>
+    <div className="footer1">
+      <hr className="solid-divider" />
+      <div className="container-b">
+        <div className="container-c">
+          <div className="users-list">
+            {props.data.registered_users.top_users.map((item) => <Avatar imgurl={item.image_url} name={item.name} />)}
+          </div>
+          {!props.isArchived && <button className="btn">Register Now</button>}
+        </div>
+        <div>
+          {others > 0 && ("and " + others + " others registered")}
+        </div>
+      </div>
+    </div>
     <div className="footer">
       <hr className="solid-divider" />
       <div className="container-b">
@@ -55,10 +71,8 @@ const MakeCard = (props) => {
           </div>
           {!props.isArchived && <button className="btn">Register Now</button>}
         </div>
-
         <div>
           {others > 0 && ("and " + others + " others registered")}
-
         </div>
       </div>
     </div>
