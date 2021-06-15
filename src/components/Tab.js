@@ -25,7 +25,7 @@ export default function Tabs(props) {
               onClick={()=>{handleOptionChange(id)}}>
               <div>
                 {option.icon && <i className={`${option.icon}`}/>}
-                <span>{option.title}</span>
+                <span>{option.text}</span>
               </div>
           </div>
         ))

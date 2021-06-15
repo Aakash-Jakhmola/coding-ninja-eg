@@ -30,15 +30,33 @@
   
   padding: 1rem;
 }
-
+.solid-divider { 
+  border-top: 1px solid #eee;
+  
+}
 .Card{
   width: 45%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 2%;
+  margin-bottom: 25px;
 }
-
+td {
+  width : 33%;
+}
 .imgContainer{
   border-radius: 2%;
+}
+
+.btn {
+  float: right;
+  padding:0.6rem 1rem 0.6rem 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #FA7328;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
 }
 
 .img{
@@ -62,6 +80,7 @@
 }
 
 .container-b {
+  width: 100%;
   padding : 15px;
 }
 

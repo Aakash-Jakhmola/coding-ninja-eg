@@ -8,7 +8,6 @@ import Tabs from './Tab'
 export default () => {
     
   const [activeTags, setActiveTags] = React.useState([]) ;
-  const [initialState, setInitialState] = React.useState(1) ;
   const [Tags , setTags] = React.useState([]);
   const [limit, setLimit] = React.useState(0) ;
   const [text, setText] = React.useState("Show more tags") ;
@@ -19,32 +18,28 @@ export default () => {
 
 
   function getEventCategory() {
-    let optionsList = [{icon:"far fa-calendar-alt",title:"ALL_EVENTS",state:false},
-          {icon:"fas fa-desktop",title:"WEBINARS",state:false},
-          {icon:"fas fa-laptop-code",title:"CODING_EVENTS",state:false},
-          {icon:"fas fa-sitemap",title:"Bootcamp Events",state:false},
-          {icon:"far fa-file-video",title:"Workshop",state:false}]
-
+    let optionsList = [{icon:"far fa-calendar-alt",title:"ALL_EVENTS", text:"All Events",state:false},
+          {icon:"fas fa-desktop",title:"WEBINAR", text : "Webinars",state:false},
+          {icon:"fas fa-laptop-code",title:"CODING_EVENT",text:"Coding Events",state:false},
+          {icon:"fas fa-sitemap",title:"BOOTCAMP_EVENT", text:"Bootcamp Events" ,state:false},
+          {icon:"far fa-file-video",title:"WORKSHOP",text : "Workshop",state:false}]
+  
     let selectedOption = localStorage.getItem( 'event_category' ) || 0;
     setActiveEventCategory(optionsList[selectedOption].title) ;
     optionsList[selectedOption].state = true
     return optionsList
   }
-
+  
   function getEventSubCategory() {
-    let optionsList = [{title:"Upcoming",state:false},
-          {title:"Recorded",state:false},
-          {title:"All Time Favourite",state:false}]
-
+    let optionsList = [{title:"Upcoming",text:"Upcoming" ,state:false},
+          {title:"Archived", text :"Archived" , state:false},
+          {title:"All Time Favorites",text: "All Time Favorites",state:false}]
+  
     let selectedOption = localStorage.getItem( 'event_sub_category' ) || 0;
     setActiveEventSubCategory(optionsList[selectedOption].title) ;
     optionsList[selectedOption].state = true
     return optionsList
   }
-
- 
-  
-
 
   React.useEffect(() => {
 
@@ -55,7 +50,6 @@ export default () => {
     .then((res)=> {
       console.log(res.data.data.tags);
       setTags(res.data.data.tags);
-      setActiveTags(res.data.data.tags)
       setLimit(10);
     },
     (err)=>console.log(err)
@@ -81,10 +75,6 @@ export default () => {
     if(e.target.style.color != "white") {
       e.target.style.color="white";
       e.target.style.backgroundColor="#FA7328";
-      if(initialState == 1) {
-        setInitialState(0);
-        setActiveTags([]) ;
-      }
       setActiveTags((state) => [...state,e.target.innerHTML]) ;
       console.log(activeTags)
     } else {
@@ -96,10 +86,6 @@ export default () => {
       
       e.target.style.color="#616161";
       e.target.style.backgroundColor="#eee";
-      if(new_ar.length == 0) {
-        new_ar = Tags ;
-        setInitialState(1) ;
-      }
       setActiveTags(new_ar);
       console.log(activeTags)
     }
@@ -128,3 +114,5 @@ export default () => {
   </div>;
 
 }
+
+
