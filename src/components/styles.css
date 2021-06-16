@@ -10,6 +10,32 @@ body {
   border-radius: 0.2% ;
   border : 1px solid #d0d0d0;
 }
+.page-container {
+  margin-left: auto;
+  width:fit-content;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.page-container > input {
+  width: 30px;
+  height: 30px;
+  padding : 0;
+  border-radius: 5px;
+  border : 1px solid #eee;
+  text-align: center;
+  outline: none;
+}
+
+.arrow-btn {
+  width:30px;
+  height :30px;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  background-color: #FA7328;
+}
+
 .tab-container {
   width: 100%;
 }
@@ -37,6 +63,13 @@ body {
   justify-content: space-between;
   padding: 1rem;
 }
+
+.arrow-btn:disabled {
+  opacity: 0.2;
+}
+
+
+
 .solid-divider { 
   border-top: 1px solid #eee;
   

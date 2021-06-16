@@ -70,12 +70,15 @@ const MakeCard = (props) => {
 
 export default (props) => {
 
+  
+
   let activeTags = "";
   console.log(props.list)
   props.list.forEach((s) => activeTags += s + ',')
   let isArchived = false ;
   if(props.activeSubCategory === "Archived")
     isArchived = true ;
+  
 
   console.log(activeTags)
   let url = 'https://api.codingninjas.com/api/v3/events?';
@@ -88,12 +91,13 @@ export default (props) => {
     url += activeTags.slice(0, -1);
   url += '&';
   url += 'offset=';
-  url += '0';
+  url += props.offset;
 
 
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
+    window.scrollTo(0,0);
     console.log("indise");
     console.log(props.activeCategory);
     console.log(props.activeSubCategory);
@@ -112,6 +116,7 @@ export default (props) => {
       .then((res) => {
         console.log(res.data);
         setData(res.data.data.events);
+        props.setTotalPages(res.data.data.page_count);
       }
         , (err) => console.log(err)
       )
