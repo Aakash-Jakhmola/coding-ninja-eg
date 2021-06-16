@@ -3,7 +3,7 @@ import axios from 'axios'
 import Tag from './Tag'
 import Avatar from './Avatar'
 import date from 'date-and-time'
-
+import defCardImage from '../images/background.jpg'
 
 const MakeCard = (props) => {
 
@@ -20,7 +20,7 @@ const MakeCard = (props) => {
 
   return <div className="Card">
     <div className="imgContainer">
-      <img className="img" src={props.data.mobile_cover_picture} />
+      <img className="img" src={props.data.mobile_cover_picture ? props.data.mobile_cover_picture : defCardImage } />
       {!props.isArchived && <div className="img-text"><p>Registrations open till {reg_end_date}</p></div>}
     </div>
     <div className="container-b">

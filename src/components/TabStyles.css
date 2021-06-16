@@ -1,6 +1,6 @@
-
 .opt-out {
   width: 20%;
+  height: 100%;
   padding-right: 1rem;
   min-width: fit-content;
   display: inline-block;
@@ -8,6 +8,8 @@
   color: rgb(187, 187, 187);
   cursor: pointer;
   text-align: center;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .opt-out div {
@@ -17,7 +19,6 @@
   margin-right: 0.5rem;
 }
 
-
 .opt-out-active {
   border-bottom: 2px solid rgb(255, 115, 0) ;
   color: rgb(255, 115, 0);
@@ -26,13 +27,11 @@
 .opt-out :hover {
   color: grey;
 }
-.opt-out-active :hover {
-  color: rgb(255, 115, 0);
-}
 
 .tab-wrapper {
   width : 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+  overflow: hidden;
 }
-
