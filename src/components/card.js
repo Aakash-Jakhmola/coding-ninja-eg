@@ -42,10 +42,12 @@ const MakeCard = (props) => {
             </tr>
           </table>
         </div>
-        <p>{props.data.short_desc}</p>
+        <hr className="solid-divider" />
+        <p style={{fontSize:"0.8rem"}}>{props.data.short_desc}</p>
       </div>
       <div className="TagContainer">
-        {props.data.card_tags.map((item) => <Tag data={item} />)}
+        {props.data.card_tags.slice(0,3).map((item) => <Tag data={item} />)}
+        {props.data.card_tags.length > 3 && <div> + {props.data.card_tags.length - 3} more </div>}
       </div>
     </div>
     <div className="sized-box-100"></div>
@@ -59,7 +61,7 @@ const MakeCard = (props) => {
           {!props.isArchived && <button className="btn">Register Now</button>}
         </div>
         <div>
-          {others > 0 && ("and " + others + " others registered")}
+          {others > 0 && <span>and <strong> {others}</strong> others registered</span>}
         </div>
       </div>
     </div>

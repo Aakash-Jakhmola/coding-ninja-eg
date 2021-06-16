@@ -1,0 +1,63 @@
+.footer-bottom {
+  margin-top: 5rem;
+  height: 18rem;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(27, 13, 4);
+  overflow: hidden;
+  padding:0 5rem 0 5rem;
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
+.footer-bottom i {
+  color: white;
+  font-size: x-large;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin: 0 0.5rem 0 0;
+}
+
+.cnlogo-container {
+  float: left;
+  width: fit-content;
+  height: 100%;
+  position: relative;
+}
+
+.cnlogo {
+  margin-top: 2rem;
+  height: 5rem;
+}
+
+.info {
+  height: 100%; 
+  margin-top:2rem ;
+  margin-left: 6rem;
+}
+
+td {
+  font-size: 0.85rem;
+  text-align: left;
+  padding: 0rem 3rem 0.5rem 0;
+  width: fit-content;
+}
+
+h3 {
+  margin: 0;
+}
+
+.contacts {
+  float: right;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+.contacts-td2 {
+  padding: 0;
+}
+.contacts-td2 i {
+  border: none;
+  font-size: medium;
+}

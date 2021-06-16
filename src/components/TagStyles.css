@@ -1,0 +1,16 @@
+.Tag {
+  background-color: #eee;
+  color: #616161;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  padding:8px;
+  margin-bottom: 7px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+
+.Tag:hover {
+  background-color: #fa7b36;
+  color: white;
+}

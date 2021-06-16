@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainContainer from './components/maincontainer'
-import Heading from './components/Heading'
+import Footer from './components/Footer'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Heading />
+    <div className="sized-box-100"></div>
     <MainContainer/>
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

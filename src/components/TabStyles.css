@@ -1,7 +1,4 @@
 
-
-
-
 .opt-out {
   width: 20%;
   padding-right: 1rem;
@@ -20,6 +17,7 @@
   margin-right: 0.5rem;
 }
 
+
 .opt-out-active {
   border-bottom: 2px solid rgb(255, 115, 0) ;
   color: rgb(255, 115, 0);
@@ -35,6 +33,6 @@
 .tab-wrapper {
   width : 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 

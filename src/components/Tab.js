@@ -18,6 +18,10 @@ export default function Tabs(props) {
     }
   },[])
 
+  let customStyle = {
+    fontSize : props.storageId === "event_sub_category" ? "1rem" : "1.3rem" ,
+  };
+
   return (
       <div className="tab-wrapper">
       { props.options.map((option,id)=>(
@@ -25,7 +29,7 @@ export default function Tabs(props) {
               onClick={()=>{handleOptionChange(id)}}>
               <div>
                 {option.icon && <i className={`${option.icon}`}/>}
-                <span>{option.text}</span>
+                <span style={customStyle}>{option.text}</span>
               </div>
           </div>
         ))
