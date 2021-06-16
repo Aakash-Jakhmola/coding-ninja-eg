@@ -47,7 +47,7 @@ const MakeCard = (props) => {
       </div>
       <div className="TagContainer">
         {props.data.card_tags.slice(0,3).map((item) => <Tag data={item} />)}
-        {props.data.card_tags.length > 3 && <div> + {props.data.card_tags.length - 3} more </div>}
+        {props.data.card_tags.length > 3 && <p> + {props.data.card_tags.length - 3} more </p>}
       </div>
     </div>
     <div className="sized-box-100"></div>

@@ -38,11 +38,14 @@ body {
 
 .tab-container {
   width: 100%;
+  
 }
 .tab-outer {
   height: 4rem;
   width: 100%;
+  box-sizing: border-box;
   overflow-x: auto;
+  white-space: nowrap;
 }
 .tab-inner-container {
   background-color: #eee;
@@ -184,6 +187,9 @@ td {
   gap: 10px;
 }
 
+.TagContainer > p {
+  color:#FA7328;
+}
 
 .cardContainer {
   width: 100%;

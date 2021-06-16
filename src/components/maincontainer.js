@@ -107,9 +107,12 @@ export default () => {
     console.log(e.target.innerHTML)
   }
 
-  return <div className='main-box'>
+  return (
+  <div className='main-box'>
     <div className="tab-container">
-      <div className="tab-outer"> <Tabs options={eventCategory} setActiveOption={setActiveEventCategory} setOptions={setEventCategory} storageId="event_category" /> </div>
+      <div className="tab-outer">
+        <Tabs options={eventCategory} setActiveOption={setActiveEventCategory} setOptions={setEventCategory} storageId="event_category" /> 
+      </div>
       <div className="tab-inner-container">
         <div className="tab-inner"> <Tabs options={eventSubCategory} setActiveOption={setActiveEventSubCategory} setOptions={setEventSubCategory} storageId="event_sub_category" /> </div></div>
     </div>
@@ -124,7 +127,7 @@ export default () => {
           <input type="text" inputmode="numeric" value={curPageNumber} onChange={handlePageChange} />
           {" of "} {totalPages} {" "}
           <button className="arrow-btn" disabled={curPageNumber === totalPages} onClick={increment}><i class="fas fa-angle-right"></i></button>
-        </div>
+        </div> 
       </div>
 
       <div className="sidebar">
@@ -136,7 +139,7 @@ export default () => {
       </div>
     </div>
 
-  </div>;
+  </div>);
 
 }
 

@@ -1,0 +1,24 @@
+.header-img-container {
+  height: 18rem;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(27, 13, 4);
+  overflow: hidden;
+  padding:0 5rem 0 5rem;
+}
+
+
+
+.header-headings > *{
+  margin: 0px;
+}
+
+.header-headings {
+  box-sizing: border-box;
+  margin-top: 5rem;
+}
+
+.header-headings > h1 {
+  font-size: 3rem;
+}
