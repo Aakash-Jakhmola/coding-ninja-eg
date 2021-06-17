@@ -4,11 +4,12 @@ body {
 }
 
 .main-box {
-  min-width: 500px;
+ 
   width : 80%;
   margin:auto;
   border-radius: 0.2% ;
   border : 1px solid #d0d0d0;
+  overflow-x : auto;
 }
 .page-container {
   margin-left: auto;
@@ -71,125 +72,27 @@ body {
   opacity: 0.2;
 }
 
-
-
 .solid-divider { 
   border-top: 1px solid #eee;
   
-}
-
-.table > tr > th {
-  font-size: 0.85rem;
-  color : #706e6e;
-}
-
-.table > tr > td {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.Card{
-  width: 48%;
-  min-width: 350px;
-  position: relative;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 2%;
-  margin-bottom: 25px;
-  position: relative;
-  min-height: fit-content;
-  cursor: pointer;
 }
 
 .footer1 {
   visibility: hidden;
 }
 
-
-td {
-  width : 33%;
-}
-.imgContainer{
-  width: 100%;
-  border-radius: 2%;
-  position: relative;
-}
-
-.img-text > p {
-  margin:0;
-  margin-left:5px;
-  margin-right:5px;
-}
-
-.img-text {
-  position:absolute;
-  bottom: 15px;
-  right: 5px;
-  font-size: 0.8rem;
-  background:white;
-  border-radius:2%;
-
-}
-
-.btn {
-  margin-right: 0;
-  margin-left: auto;
-  padding:0.6rem 1rem 0.6rem 1rem;
-  border-radius: 30px;
-  border: none;
-  background-color: #FA7328;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-
-}
-.footer {
- width: 100%;
- height: 100px;
- position : absolute;
- bottom : 0;
-}
-
-.sized-box-100 {
-  height: 100px;
-}
-.img{
-  width: 100%;
-  height: 149.63px;
-  border-radius: 2%;
-  border-bottom-left-radius: 0%;
-  border-bottom-right-radius: 0%;
-  object-fit: contain;
-}
-
-.table {
-  width: 100%;
-}
-
 .TagC {
   margin-right: 10px ;
 }
 
-.table td {
-  text-align: center;
-}
 
-.container-b {
-  width: 100%;
-  padding:15px;
-  box-sizing: border-box;
-}
-
-.container-c {
-  display: flex;
-}
 
 .TagContainer {
   display: flex;
   gap: 10px;
 }
 
-.TagContainer > p {
-  color:#FA7328;
-}
+
 
 .cardContainer {
   width: 100%;
@@ -201,22 +104,12 @@ td {
   width:80%;
 }
 
-.users-list {
-  display: flex;
-}
+
 
 .TagC > p {
   cursor: pointer;
 }
 
 
-.container-b > div {
-  font-size: 0.7rem;
-}
 
-@media screen and (max-width: 720px) {
-  .Card {
-    width: 100%;
-  }
- 
-}
+

@@ -1,0 +1,25 @@
+.btn {
+  margin-right: 0;
+  margin-left: auto;
+  padding:0.6rem 1rem 0.6rem 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #FA7328;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+}
+.footer {
+ width: 100%;
+ height: 100px;
+ position : absolute;
+ bottom : 0;
+}
+
+.users-list {
+  display: flex;
+}
+.container-c {
+  display: flex;
+}

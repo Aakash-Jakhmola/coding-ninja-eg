@@ -8,6 +8,5 @@ export default (props) => {
     <div className="avatar">
       <img src= {props.imgurl && props.imgurl.length > 0 ? props.imgurl : profile_image } title = {props.name}className="img"/>
     </div>
-    
   </div> ;
 }

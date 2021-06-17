@@ -1,9 +1,10 @@
 import React from 'react'
 import './styles.css'
-import Card from './card'
 import axios from 'axios'
-import Tag from './Tag'
 import Tabs from './Tab'
+import TagWrapper from './TagWrapper'
+import CardsWrapper from './CardsWrapper'
+import {eventsCategory, eventsSubCategory} from './utils'
 
 export default () => {
 
@@ -19,12 +20,7 @@ export default () => {
   const [totalPages, setTotalPages] = React.useState(0);
 
   function getEventCategory() {
-    let optionsList = [{ icon: "far fa-calendar-alt", title: "ALL_EVENTS", text: "All Events", state: false },
-    { icon: "fas fa-desktop", title: "WEBINAR", text: "Webinars", state: false },
-    { icon: "fas fa-laptop-code", title: "CODING_EVENT", text: "Coding Events", state: false },
-    { icon: "fas fa-sitemap", title: "BOOTCAMP_EVENT", text: "Bootcamp Events", state: false },
-    { icon: "far fa-file-video", title: "WORKSHOP", text: "Workshop", state: false }]
-
+    let optionsList = eventsCategory
     let selectedOption = localStorage.getItem('event_category') || 0;
     setActiveEventCategory(optionsList[selectedOption].title);
     optionsList[selectedOption].state = true
@@ -32,18 +28,21 @@ export default () => {
   }
 
   function getEventSubCategory() {
-    let optionsList = [{ title: "Upcoming", text: "Upcoming", state: false },
-    { title: "Archived", text: "Archived", state: false },
-    { title: "All Time Favorites", text: "All Time Favorites", state: false }]
-
+    let optionsList = eventsSubCategory
     let selectedOption = localStorage.getItem('event_sub_category') || 0;
     setActiveEventSubCategory(optionsList[selectedOption].title);
     optionsList[selectedOption].state = true
     return optionsList
   }
 
+  function getActiveTags() {
+    let selectedTags = localStorage.getItem('active_tags') ;
+    if(!selectedTags) 
+      selectedTags = activeTags ;
+    return selectedTags ;
+  }
+
   function handlePageChange(e) {
-    console.log("fh")
     console.log(e.target.value);
     setCurPageNumber(parseInt(e.target.value));
   }
@@ -57,7 +56,7 @@ export default () => {
   }
 
   React.useEffect(() => {
-
+    setActiveTags(getActiveTags()) ;
     setEventCategory(getEventCategory());
     setEventSubCategory(getEventSubCategory());
 
@@ -71,41 +70,6 @@ export default () => {
       )
   }, [])
 
-  const handleClick = () => {
-    if (limit == 10) {
-      setLimit(Tags.length)
-      setText("Show less tags")
-    }
-    else {
-      setLimit(10)
-      setText("Show more tags")
-    }
-  }
-
-  const handleTagClick = (e) => {
-
-    console.log(e.target.innerHTML)
-
-    let new_ar = [];
-    if (e.target.style.color != "white") {
-      e.target.style.color = "white";
-      e.target.style.backgroundColor = "#FA7328";
-      setActiveTags((state) => [...state, e.target.innerHTML]);
-      console.log(activeTags)
-    } else {
-
-      for (let i = 0; i < activeTags.length; ++i) {
-        if (activeTags[i] != e.target.innerHTML)
-          new_ar.push(activeTags[i]);
-      }
-
-      e.target.style.color = "#616161";
-      e.target.style.backgroundColor = "#eee";
-      setActiveTags(new_ar);
-      console.log(activeTags)
-    }
-    console.log(e.target.innerHTML)
-  }
 
   return (
   <div className='main-box'>
@@ -118,29 +82,22 @@ export default () => {
     </div>
 
     <div className="content">
-
       <div className="mainbar">
-        <Card setTotalPages={setTotalPages} offset={(curPageNumber-1)*20} list={activeTags} activeCategory={activeEventCategory} activeSubCategory={activeEventSubCategory} />
-        <div className="page-container">
+        <CardsWrapper setTotalPages={setTotalPages} offset={(curPageNumber-1)*20} list={activeTags} activeCategory={activeEventCategory} activeSubCategory={activeEventSubCategory} />
+        {totalPages > 0 && <div className="page-container">
           <button className="arrow-btn" disabled={curPageNumber === 1} onClick={decrement}><i class="fas fa-angle-left"></i></button>
           {" Page "}
           <input type="text" inputmode="numeric" value={curPageNumber} onChange={handlePageChange} />
           {" of "} {totalPages} {" "}
           <button className="arrow-btn" disabled={curPageNumber === totalPages} onClick={increment}><i class="fas fa-angle-right"></i></button>
-        </div> 
+        </div> }
       </div>
 
       <div className="sidebar">
         Tags
-        <div className="TagC">
-          {Tags && Tags.slice(0, limit).map((item) => <Tag data={item} handleTagClick={handleTagClick} />)}
-          <p style={{ color: "#FA7328" }} onClick={handleClick}>{text}</p>
-        </div>
+        <TagWrapper Tags={Tags} limit={limit} text={text} setActiveTags={setActiveTags} setText={setText} setLimit={setLimit} />
       </div>
     </div>
 
   </div>);
-
 }
-
-
