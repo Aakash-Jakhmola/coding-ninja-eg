@@ -21,7 +21,7 @@ export default () => {
 
   function getEventCategory() {
     let optionsList = eventsCategory
-    let selectedOption = localStorage.getItem('event_category') || 0;
+    let selectedOption = sessionStorage.getItem('event_category') || 0;
     setActiveEventCategory(optionsList[selectedOption].title);
     optionsList[selectedOption].state = true
     return optionsList
@@ -29,7 +29,7 @@ export default () => {
 
   function getEventSubCategory() {
     let optionsList = eventsSubCategory
-    let selectedOption = localStorage.getItem('event_sub_category') || 0;
+    let selectedOption = sessionStorage.getItem('event_sub_category') || 0;
     setActiveEventSubCategory(optionsList[selectedOption].title);
     optionsList[selectedOption].state = true
     return optionsList
@@ -41,6 +41,14 @@ export default () => {
     console.log(e.target.value);
     setCurPageNumber(parseInt(e.target.value));
   }
+  
+  function getActiveTags() {
+    let selectedTags = sessionStorage.getItem('active_tags') ;
+    selectedTags = JSON.parse(selectedTags)
+    if(!selectedTags) 
+      selectedTags = activeTags ;
+    return selectedTags ;
+  }
 
   function increment() {
     setCurPageNumber((prev) => prev + 1);
@@ -51,7 +59,7 @@ export default () => {
   }
 
   React.useEffect(() => {
-    
+    setActiveTags(getActiveTags())
     setEventCategory(getEventCategory());
     setEventSubCategory(getEventSubCategory());
 
@@ -66,7 +74,7 @@ export default () => {
   }, [])
 
   React.useEffect(()=>{
-    console.log(activeTags);
+    sessionStorage.setItem('active_tags',JSON.stringify(activeTags))
   },[activeTags])
 
   return (

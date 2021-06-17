@@ -4,7 +4,6 @@
   padding-right: 1rem;
   min-width: fit-content;
   display: inline-block;
-  font-size: 20px;
   color: rgb(187, 187, 187);
   cursor: pointer;
   text-align: center;
@@ -13,6 +12,8 @@
 }
 
 .opt-out div {
+  box-sizing: border-box;
+  height: 100%;
  margin-top: 1rem;
 }
 .opt-out i {

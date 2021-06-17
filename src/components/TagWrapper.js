@@ -40,7 +40,7 @@ export default (props) => {
 
   return (
     <div className="TagC">
-        {props.Tags && props.Tags.slice(0, props.limit).map((item) => <Tag data={item} handleTagClick={handleTagClick} />)}
+        {props.Tags && props.Tags.slice(0, props.limit).map((item) => <Tag notInCard={true} data={item} handleTagClick={handleTagClick} />)}
         <p style={{ color: "#FA7328" }} onClick={handleClick}>{props.text}</p>
     </div>
   );

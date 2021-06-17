@@ -9,12 +9,12 @@ export default function Tabs(props) {
       newOptionsList[i].state = i===id;
     props.setOptions(newOptionsList) 
     props.setActiveOption(props.options[id].title);
-    localStorage.setItem( props.storageId, id);
+    sessionStorage.setItem( props.storageId, id);
   }
 
   useEffect(()=>{
     return ()=>{
-      localStorage.clear()
+      sessionStorage.clear()
     }
   },[])
 
