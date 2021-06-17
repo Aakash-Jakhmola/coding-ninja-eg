@@ -1,7 +1,7 @@
 .header-img-container {
   height: 18rem;
-  color: white;
-  width: 100%;
+  color: rgb(129, 123, 123);
+  width: 100vw;
   box-sizing: border-box;
   background-color: rgb(27, 13, 4);
   overflow: hidden;

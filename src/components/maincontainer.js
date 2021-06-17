@@ -35,12 +35,7 @@ export default () => {
     return optionsList
   }
 
-  function getActiveTags() {
-    let selectedTags = localStorage.getItem('active_tags') ;
-    if(!selectedTags) 
-      selectedTags = activeTags ;
-    return selectedTags ;
-  }
+ 
 
   function handlePageChange(e) {
     console.log(e.target.value);
@@ -56,7 +51,7 @@ export default () => {
   }
 
   React.useEffect(() => {
-    setActiveTags(getActiveTags()) ;
+    
     setEventCategory(getEventCategory());
     setEventSubCategory(getEventSubCategory());
 
