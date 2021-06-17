@@ -65,6 +65,9 @@ export default () => {
       )
   }, [])
 
+  React.useEffect(()=>{
+    console.log(activeTags);
+  },[activeTags])
 
   return (
   <div className='main-box'>
@@ -90,7 +93,7 @@ export default () => {
 
       <div className="sidebar">
         Tags
-        <TagWrapper Tags={Tags} limit={limit} text={text} setActiveTags={setActiveTags} setText={setText} setLimit={setLimit} />
+        <TagWrapper Tags={Tags} limit={limit} activeTags={activeTags} text={text} setActiveTags={setActiveTags} setText={setText} setLimit={setLimit} />
       </div>
     </div>
 

@@ -11,15 +11,18 @@ export default (props) => {
       e.target.style.color = "white";
       e.target.style.backgroundColor = "#FA7328";
       props.setActiveTags((state) => [...state, e.target.innerHTML]);
-     
     } else {
-      for (let i = 0; i < props.activeTags ? props.activeTags.length : 0 ; ++i) {
+      let sz = 0 ;
+      if(props.activeTags)
+        sz = props.activeTags.length ;
+      for (let i = 0; i < sz ; ++i) {
         if (props.activeTags[i] != e.target.innerHTML)
           new_ar.push(props.activeTags[i]);
       }
       e.target.style.color = "#616161";
       e.target.style.backgroundColor = "#eee";
       props.setActiveTags(new_ar);
+
     }
     console.log(e.target.innerHTML)
   }
